@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<p>
+  <label for="native">Native Field</label>
+  :
+  <input type="number" name="native" id="native" [value]="nativeField" (input)="onUpdateNativeField($event)">
+</p>
+<p>
+  <label for="angular">Angular Field</label>
+  :
+  <input type="number" name="angular" id="angular" [(ngModel)]="angularField"
+    (ngModelChange)="onUpdateAngularField($event)">
+</p>
+<hr>
+<h3>Output</h3>
+<output>
+  <h4>Native Field</h4>
+  <p>
+    <strong>Event Target Value</strong>: {{nativeFieldEventData === '' ? "''" : nativeFieldEventData}}
+    <br>
+    <strong>Converted to Number</strong>: {{nativeFieldConvertedToNumber}}
+  </p>
+  <h4>Angular Field</h4>
+  <p>
+    <strong>Event Data</strong>: {{angularFieldEventData === null ? 'null' : angularFieldEventData}}
+    <br>
+    <strong>Default to Number</strong>: {{angularFieldEventData}}
+  </p>
+  <h4>Custom Logic to Match the Output with Angular Field</h4>
+  <p>
+    <strong>Event Target Value</strong>: {{nativeFieldEventData === '' ? 'null' : nativeFieldEventData}}
+    <br>
+    <strong>Converted to Number</strong>: {{nativeFieldEventData === '' ? null : nativeFieldEventData}}
+  </p>
+</output>
