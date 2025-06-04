@@ -1,0 +1,26 @@
+{
+  // Editor Settings
+  // The number of spaces a tab is equal to. This setting is overridden
+  // based on the file contents when `editor.detectIndentation` is true.
+  "editor.tabSize": 2,
+  // Insert spaces when pressing Tab. This setting is overriden
+  // based on the file contents when `editor.detectIndentation` is true.
+  "editor.insertSpaces": true,
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces`
+  // will be detected based on the file contents. Set to false to keep
+  // the values you've explicitly set, above.
+  "editor.detectIndentation": false,
+  // Work Area Zoom Level
+  "window.zoomLevel": 0,
+  // Format file on save
+  // "editor.formatOnSave": true,
+  // Handle white space and final new line on file save
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // Insert Date String Extension Settings
+  "insertDateString.format": "YYYY-MM-DDThh:mm:ss",
+  "insertDateString.formatDate": "YYYY-MM-DD",
+  "insertDateString.formatTime": "hh:mm:ss",
+}
