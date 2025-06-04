@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:applications": "node dist/applications/server/server.mjs",
+    "prod": "ng build --base-href='/DEPLOYMENT_APP_ID/'",
     "deploy": "node deploy",
     "zip": "zip-build dist/applications dist-zip --template='DEPLOYMENT_APP_ID-%NAME%-%VERSION%-%TIMESTAMP%.%EXT%'"
   },

@@ -21,7 +21,6 @@
               "base": "dist/applications",
               "browser": ""
             },
-            "baseHref": "",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -38,7 +37,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "ssr": false
           },
           "configurations": {
             "production": {
