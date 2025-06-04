@@ -7,8 +7,8 @@ const config = {
     password: "password",
     host: "ftp.someserver.com",
     port: 21,
-    localRoot: __dirname + "/local-folder",
-    remoteRoot: "/public_html/remote-folder/",
+    localRoot: __dirname + "/dist/applications",
+    remoteRoot: "/public_html/DEPLOYMENT_APP_ID/",
     // include: ["*", "**/*"],      // this would upload everything except dot files
     // include: ["*.php", "dist/*", ".*"],
     include: ["*", "**/*", ".*"],
@@ -21,7 +21,7 @@ const config = {
     // ],
     exclude: [],
     // delete ALL existing files at destination before uploading, if true
-    deleteRemote: false,
+    deleteRemote: true,
     // Passive mode is forced (EPSV command is not sent)
     forcePasv: true,
     // use sftp or ftp

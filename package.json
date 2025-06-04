@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:applications": "node dist/applications/server/server.mjs",
     "deploy": "node deploy",
-    "build:zip": "zip-build dist/FINAL_DEPLOYMENT_DIRECTORY dist-zip --template='DEPLOYMENT_NAME-%NAME%-%VERSION%-%TIMESTAMP%.%EXT%'"
+    "zip": "zip-build dist/applications dist-zip --template='DEPLOYMENT_APP_ID-%NAME%-%VERSION%-%TIMESTAMP%.%EXT%'"
   },
   "private": true,
   "dependencies": {
