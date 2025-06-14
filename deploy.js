@@ -1,14 +1,27 @@
 const FtpDeploy = require("ftp-deploy");
 const ftpDeploy = new FtpDeploy();
 
+var argv = require('minimist')(process.argv);
+const folder = argv['dir']?.toString();
+const user = argv['usr']?.toString();
+const password = argv['pwd']?.toString();
+const url = argv['url']?.toString();
+
+
+if(!(folder && user && password && url)) {
+  console.log('Argument `--dir or --usr or --pwd or --url` not found.');
+  console.error('Deployment failed!');
+  process.exit(1);
+}
+
 const config = {
-    user: "user",
+    user: user,
     // Password optional, prompted if none given
-    password: "password",
-    host: "ftp.someserver.com",
+    password: password,
+    host: url,
     port: 21,
-    localRoot: __dirname + "/dist/applications",
-    remoteRoot: "/public_html/DEPLOYMENT_APP_ID/",
+    localRoot: __dirname + `/dist/${folder}`,
+    remoteRoot: `/public_html/${folder}/`,
     // include: ["*", "**/*"],      // this would upload everything except dot files
     // include: ["*.php", "dist/*", ".*"],
     include: ["*", "**/*", ".*"],
