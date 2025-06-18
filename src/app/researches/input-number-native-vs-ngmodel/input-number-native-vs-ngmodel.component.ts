@@ -17,6 +17,11 @@ export class InputNumberNativeVsNgmodelComponent {
   nativeFieldConvertedToNumber: any;
   angularFieldEventData: any;
 
+  constructor() {
+    this.onUpdateNativeField({target: {value: this.nativeField}});
+    this.onUpdateAngularField(this.angularField);
+  }
+
   onUpdateNativeField = (event: any) => {
     this.nativeFieldEventData = event.target.value;
     this.nativeFieldConvertedToNumber = Number(this.nativeFieldEventData);
