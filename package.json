@@ -9,8 +9,8 @@
     "test": "ng test",
     "serve:ssr:applications": "node dist/applications/server/server.mjs",
     "prod": "ng build --base-href='/applications/'",
-    "zip": "zip-build dist/zipfolder dist-zip --template='DEPLOYMENT_APP_ID-%NAME%-%VERSION%-%TIMESTAMP%.%EXT%'",
     "deploy": "node deploy --dir applications --usr username --pwd password --url ftp.someserver.com",
+    "zip": "zip-build dist/zipfolder dist-zip --template='DEPLOYMENT_APP_ID-%NAME%-%VERSION%-%TIMESTAMP%.%EXT%'",
     "automate": "node automate.js"
   },
   "private": true,

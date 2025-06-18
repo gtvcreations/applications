@@ -137,7 +137,11 @@ const deploy = (dir) => {
 // INIT
 const init = async () => {
   console.log(`Automation Task Initiated!`, `\nPress Ctrl + C to close the task`);
-  await generateBuild();
+  const dirName = await generateBuild();
+  if(dirName) {
+    await deployApp(dirName);
+    await generateZip(dirName);
+  }
   rl.close();
 }
 
@@ -148,10 +152,8 @@ const generateBuild = async () => {
     console.log(`You have entered "${dirName}".`);
     if(isyes(await askUser(`\nDo you want to generate build (y/n)? `))) {
       await removeFileOrDir(dirName);
-      build();
+      build(dirName);
       rename(dirName);
-      await generateZip(dirName);
-      await deployApp(dirName);
     }
   } else {
     console.log(`You have entered invalid directory name.`);
@@ -159,6 +161,7 @@ const generateBuild = async () => {
       await retry('generateBuild');
     }
   }
+  return dirName;
 }
 
 const generateZip = async (dirName) => {
